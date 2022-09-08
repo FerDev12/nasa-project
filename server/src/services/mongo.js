@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const MONGO_URL = process.env.MONGO_URL.replace(
-  '<password>',
-  process.env.MONGO_PASS
-);
+  '<user>',
+  process.env.MONGO_USER
+).replace('<password>', process.env.MONGO_PASS);
 
 mongoose.connection.once('open', () => {
   console.log('MongoDB connection ready!');
